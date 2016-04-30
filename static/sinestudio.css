@@ -32,11 +32,20 @@ div.article-title {
 .section > h4 {counter-reset: h5}
 .section > h5 {counter-reset: h6}
 
-.section > h2:before {counter-increment: h2; content: counter(h2) ". "}
-.section > h3:before {counter-increment: h3; content: counter(h2) "." counter(h3) ". "}
-.section > h4:before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "}
-.section > h5:before {counter-increment: h5; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "}
-.section > h6:before {counter-increment: h6; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "}
+.section > h2 :before {counter-increment: h2; content: counter(h2) ". "}
+.section > h3 :before {counter-increment: h3; content: counter(h2) "." counter(h3) ". "}
+.section > h4 :before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "}
+.section > h5 :before {counter-increment: h5; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "}
+.section > h6 :before {counter-increment: h6; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "}
+
+.simple li {list-style: none;}
+.simple ul {list-style: none;}
+div.toc > {padding-left: -10px;}
+.toc ul {counter-reset: section;list-style-type: none;padding-left:0}
+.toc ul li {counter-increment: section;}
+.toc ul li:before {content: counters(section, ".") ". "}
+
+/*.toc > ul {list-style-type:lower-alpha}*/
 
 a.toc-backref {text-decoration: none;}
 
