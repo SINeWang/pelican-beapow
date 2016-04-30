@@ -64,6 +64,10 @@
 
         <div class="col-md-8">
         {% block content %}{% endblock %}
+        <hr>
+        {% if DISQUS_SITENAME %}
+            {% include "disqus.html" %}
+        {% endif %}
         </div>
         <div class="col-md-4">
         {% block sidebar %}{% endblock %}
