@@ -58,10 +58,10 @@
     {% endfor %}
       </ul>
 {% endif %}
-{% if SITES %}
+{% if LINKS %}
     <h3 class="nocount">站点</h3>
       <ul>
-    {% for name, link in SITES %}
+    {% for name, link in LINKS %}
         <li><a href="{{ link }}">{{name}}</a></li>
     {% endfor %}
       </ul>
