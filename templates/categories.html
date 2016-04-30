@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+主题 @ {{ super() }}
+{% endblock title %}
+
+{% block content %}
+<h2 class="content-title">主题</h2>
+<ul>
+{% for category, articles in categories %}
+		<li>{{ category }} ( {{ articles | length }} )</a></li>
+		<ul>
+			{% for article in articles %}
+			<li><span class="small">{{ article.date.strftime("%Y-%m-%d") }}</span>	<a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+			{% endfor %}
+		</ul>
+{% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ SITENAME }} <small>[tgs]</small>{% endblock %}
+
+{% block content %}
+<h2 class="content-title">标签</h2>
+<ul>
+{% for tag, articles in tags %}
+    <li>{{ tag }} ( {{ articles | length }} )</a></li>
+    <ul>
+			{% for article in articles %}
+			<li><span class="small">{{ article.date.strftime("%Y-%m-%d") }}</span>	<a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+			{% endfor %}
+		</ul>
+{% endfor %}
+</ul>
+{% endblock %}

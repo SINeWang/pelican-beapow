@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ SITENAME|striptags|e }}{% endblock title %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="{{ AUTHOR }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="{{ SITEURL }}/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <link href="{{ SITEURL }}/theme/sinestudio.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+    {% if FEED_ALL_ATOM %}
+        <link href="{{ FEED_ALL_ATOM }}" rel="alternate" title="{{ SITENAME }}" type="application/atom+xml">
+    {% endif %}
+    {% if FEED_ATOM %}
+        <link href="{{ FEED_ATOM }}" rel="alternate" title="{{ SITENAME }}" type="application/atom+xml">
+    {% endif %}
+    {% if FEED_RSS %}
+        <link href="{{ FEED_RSS }}" rel="alternate" title="{{ SITENAME }}" type="application/rss+xml">
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+        <link href="{{ FEED_ALL_RSS }}" rel="alternate" title="{{ SITENAME }}" type="application/rss+xml">
+    {% endif %}
+
+</head>
+
+<body>
+
+<header class="navbar navar-static-top navbar-default" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="{{ SITEURL }}/">{{ SITENAME }}</a>
+    </div>
+
+    <div id="bs-navbar" class="collapse navbar-collapse" aria-expanded="false" style="height:1px;">
+        <ul class="nav navbar-nav">
+        {% for title, link in MENUITEMS %}
+            <li><a href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
+
+        {% for name, link in LINKS %}
+            <li><a href="{{ link }}">{{ name }}</a></li>
+        {% endfor %}
+
+        {% if DISPLAY_PAGES_ON_MENU %}
+        {% for page in PAGES %}
+            <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+        {% endfor %}
+        {% endif %}
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#slogan">{{SLOGAN}}</a></li>
+        </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-8">
+        {% block content %}{% endblock %}
+        </div>
+        <div class="col-md-4">
+        {% block sidebar %}{% endblock %}
+        </div>
+
+    </div> {# End row #}
+
+
+
+</div> <!-- /container -->
+
+<footer>
+<div align="center">&copy; <a href="//yanjiong.wang">王延炯博士</a> 2011-2016
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="/theme/images/icons/cc-by-nc-nd-40-80x15.png" /></a>
+  <a href="/{{ FEED_ALL_ATOM }}"><img src="/theme/images/icons/rss.png"/></a>
+</div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/1.7.1/jquery.min.js"></script>
+<script src="//twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
+
+</body>
+</html>

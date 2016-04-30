@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}
+{{ article.title|striptags|e }} {%if article.subtitle %} - {{ article.subtitle|striptags|e }} {% endif %} @ {{ super() }}
+{% endblock title %}
+
+{% block content %}
+    <div class='article'>
+        <div class="content-title">
+            <h1>{{ article.title }}</h1>
+        </div>
+
+        <div>{{ article.content }}</div>
+
+        <hr>
+
+    {% if DISQUS_SITENAME %}
+        <h2 class="nocount">Comments</h2>
+        {% include "disqus.html" %}
+    {% endif %}
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+<div class="sidebar">
+{% if article.toc %}
+    <h2 class="nocount">目录</h2>
+
+  {{article.toc}}
+{% endif %}
+
+{% if article.date %}
+    <h2 class="nocount">发布于</h2>
+    {% set day = article.date.strftime('%d')|int %}
+    <time pubdate="pubdate" datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b') }} {{ day }} {{- article.date.strftime(', %Y') }}</time>
+{% endif %}
+
+{% if article.category|trim|count > 0 %}
+    <h2 class="nocount">主题</h2>
+    <a class="category-link" href="{{ SITEURL }}/categories/{{ category.slug }}">{{ article.category }}</a>
+{% endif %}
+
+{% if article.tags and article.tags[0]|trim|count > 0 %}
+    <h2 class="nocount">标签</h2>
+    <ul class="list-of-tags tags-in-article">
+        {% for tag in article.tags|sort %}
+        <li><a href="{{ SITEURL }}/tags/{{ tag.slug }}">{{ tag }}</a>
+            {% for aTag, tagged_articles in tags if aTag == tag %}
+            <span style="vertical-align:super;font-size:0.8em">{{ tagged_articles|count }}</span>
+            {% endfor %}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+</div>
+
+{% endblock %}
