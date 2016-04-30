@@ -8,8 +8,11 @@
     <div class="article-title">
         <h1>{{ page.title }}</h1>
     </div>
+
     <div class="article-metadata">
+      {% if page.summary %}
         <div class="article-summary">{{ page.summary }}</div>
+      {% endif %}
     </div>
 
     <div class="article-content">{{ page.content }}</div>
