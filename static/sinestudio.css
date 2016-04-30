@@ -7,55 +7,39 @@ body{
 }
 
 
-#top > div > div.navbar-header > a {
-  color: #FFFFFF;
-}
-.navbar-default .navbar-nav > li> a:hover {
-  color: #FFFFFF;
-}
-.navbar-default .navbar-nav > li> a {
-  color: #DEDEDD;
-}
+#top > div > div.navbar-header > a {color: #FFFFFF;}
+.navbar-default .navbar-nav > li> a:hover {color: #FFFFFF;}
+.navbar-default .navbar-nav > li> a {color: #DEDEDD;}
 
 
-h1 {
-  font-size: 1.8em;
-  counter-reset: h2counter;
-}
-h2 {
-  font-size: 1.5em;
-  counter-reset: h3counter;
-}
-h3 {
-  font-size: 1.2em;
-  counter-reset: h4counter;
-}
-h4 {
-  font-size: 0.9em;
-}
+h1 {font-size: 1.8em;}
+h2 {font-size: 1.5em;}
+h3 {font-size: 1.2em;}
+h4 {font-size: 0.9em;}
+h5 {font-size: 0.6em;}
+h6 {font-size: 0.3em;}
 
-body {counter-reset: h2}
-h2 {counter-reset: h3}
-h3 {counter-reset: h4}
-h4 {counter-reset: h5}
-h5 {counter-reset: h6}
-
-h2:before {counter-increment: h2; content: counter(h2) ". "}
-h3:before {counter-increment: h3; content: counter(h2) "." counter(h3) ". "}
-h4:before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "}
-h5:before {counter-increment: h5; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "}
-h6:before {counter-increment: h6; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "}
-
-h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before, h6.nocount:before { content: ""; counter-increment: none }
-
-
-a.toc-backref {
+div.article-title {
+  text-align: center;
   text-decoration: none;
 }
+.article  {counter-reset: h2}
+.article-title > h1 {padding-bottom: 20px;}
+.article-summary {padding-bottom: 20px;}
 
-div.content-title > h1 > a {
-  text-decoration: none;
-}
+.section > h2 {counter-reset: h3}
+.section > h3 {counter-reset: h4}
+.section > h4 {counter-reset: h5}
+.section > h5 {counter-reset: h6}
+
+.section > h2:before {counter-increment: h2; content: counter(h2) ". "}
+.section > h3:before {counter-increment: h3; content: counter(h2) "." counter(h3) ". "}
+.section > h4:before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "}
+.section > h5:before {counter-increment: h5; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "}
+.section > h6:before {counter-increment: h6; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "}
+
+a.toc-backref {text-decoration: none;}
+
 
 .sidebar {
   font-size: 0.9em;
