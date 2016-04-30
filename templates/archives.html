@@ -2,18 +2,30 @@
 {% block title %}{{ SITENAME }} <small>[archive]</small>{% endblock %}
 {% block content %}
 
-<h2 class="content-title nocount">时间轴</h2>
-<br>
-<table class="table">
-    <tbody>
-    {% for article in dates %}
-        <tr>
-        <td>{{ article.date.strftime("%Y-%m-%d") }}</td>
-        <td><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+<h2 class="content-title">时间轴</h2>
 
+
+{% if dates %}
+  {% for article in dates %}
+
+    <ul class="timeline">
+      <li class="{{ loop.cycle('timeline', 'timeline-inverted') }}">
+        <div class="timeline-badge primary"><i class="glyphicon glyphicon-pencil"></i></div>
+          <div class="timeline-panel" onclick="location.href='{{ SITEURL }}/{{ article.url }}'">
+          <div class="timeline-heading">
+            <span class="timeline-title">{{ article.title }}</span>
+          </div>
+          <div class="timeline-body">
+            <p>{{ article.summary }}</p>
+          </div>
+          <div class="timeline-footer">
+            <p class="glyphicon">{{ article.date.strftime("%Y-%m-%d") }}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  {% endfor %} {# For article #}
+{% endif %} {# If dates #}
 
 {% endblock %}

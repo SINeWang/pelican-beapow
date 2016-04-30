@@ -5,26 +5,26 @@
   {% if articles %}
     {% for article in articles_page.object_list %}
 
-      <ul class="timeline">
-        <li class="{{ loop.cycle('timeline', 'timeline-inverted') }}">
-          <div class="timeline-badge primary"><i class="glyphicon glyphicon-pencil"></i></div>
-            <div class="timeline-panel" onclick="location.href='{{ SITEURL }}/{{ article.url }}'">
-            <div class="timeline-heading">
-              <span class="timeline-title">{{ article.title }}</span>
-              <small class="text-muted"><span class="glyphicon glyphicon-time"></span> {{ article.date.strftime("%Y-%m-%d") }}</small>
-            </div>
-            <div class="timeline-body">
-              <p>{{ article.summary }}</p>
-            </div>
+    <ul class="timeline">
+      <li class="{{ loop.cycle('timeline', 'timeline-inverted') }}">
+        <div class="timeline-badge primary"><i class="glyphicon glyphicon-pencil"></i></div>
+          <div class="timeline-panel" onclick="location.href='{{ SITEURL }}/{{ article.url }}'">
+          <div class="timeline-heading">
+            <span class="timeline-title">{{ article.title }}</span>
           </div>
-        </li>
-      </ul>
+          <div class="timeline-body">
+            <p>{{ article.summary }}</p>
+          </div>
+          <div class="timeline-footer">
+            <p class="glyphicon">{{ article.date.strftime("%Y-%m-%d") }}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
 
     {% endfor %} {# For article #}
   {% endif %} {# If articles #}
-  {% if loop.last and (articles_page.has_previous() or not articles_page.has_previous() and loop.length > 1) %}
-    {% include 'pagination.html' %}
-  {% endif %}
 
 
 {% endblock content %}

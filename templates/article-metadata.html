@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-3">
     {% set day = article.date.strftime('%d')|int %}
-    <span class="glyphicon glyphicon-time"></span> {{ article.date.strftime('%b') }} {{ day }} {{- article.date.strftime(', %Y') }}
+    <span class="glyphicon">{{ article.date.strftime("%Y-%m-%d") }}</span>
   </div>
   <div class="col-md-3">
     {% if article.category|trim|count > 0 %}
