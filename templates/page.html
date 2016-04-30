@@ -4,18 +4,14 @@
 {% endblock title %}
 
 {% block content %}
-<section id="content" class="body">
-    <h2 class="content-title">
-        {{ page.title }}
-        {% if page.translations %}
-            <a href="{{ SITEURL }}/{{ page.url }}" class="btn btn-info xsmall">{{ page.lang or DEFAULT_LANG }}</a>
-            {% for translation in page.translations %}
-                <a href="{{ SITEURL }}/{{ translation.url }}" class="btn btn-info xsmall">{{ translation.lang }}</a>&nbsp;
-            {% endfor %}
-        {% endif %}
-    </h2>
-    {% if PDF_PROCESSOR %}<a href="{{ SITEURL }}/pdf/{{ page.slug }}.pdf">get
-    the pdf</a>{% endif %}
-    {{ page.content }}
-</section>
+<div class='article'>
+    <div class="article-title">
+        <h1>{{ page.title }}</h1>
+    </div>
+    <div class="article-metadata">
+        <div class="article-summary">{{ page.summary }}</div>
+    </div>
+
+    <div class="article-content">{{ page.content }}</div>
+</div>
 {% endblock %}
