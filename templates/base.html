@@ -7,18 +7,10 @@
     <meta name="author" content="{{ AUTHOR }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-    <script src="{{ SITEURL }}/theme/html5.js"></script>
-    <![endif]-->
-
-    <!-- Le styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <link href="{{ SITEURL }}/theme/sinestudio.css" rel="stylesheet">
 
-    <!-- So Firefox can bookmark->"abo this site" -->
     {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_ALL_ATOM }}" rel="alternate" title="{{ SITENAME }}" type="application/atom+xml">
     {% endif %}
@@ -37,7 +29,7 @@
 <body>
 
 <header class="navbar navar-static-top navbar-default" id="top" role="banner">
-  <div class="container">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -53,10 +45,6 @@
         <ul class="nav navbar-nav">
         {% for title, link in MENUITEMS %}
             <li><a href="{{ link }}">{{ title }}</a></li>
-        {% endfor %}
-
-        {% for name, link in LINKS %}
-            <li><a href="{{ link }}">{{ name }}</a></li>
         {% endfor %}
 
         {% if DISPLAY_PAGES_ON_MENU %}
@@ -95,8 +83,9 @@
   <a href="/{{ FEED_ALL_ATOM }}"><img src="/theme/images/icons/rss.png"/></a>
 </div>
 </footer>
-<script src="//cdn.bootcss.com/jquery/1.7.1/jquery.min.js"></script>
-<script src="//twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<script src="//cdn.bootcss.com/jquery/1.12.1/jquery.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 </body>
 </html>
