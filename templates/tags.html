@@ -2,7 +2,7 @@
 {% block title %}{{ SITENAME }} <small>[tgs]</small>{% endblock %}
 
 {% block content %}
-<h2 class="content-title">标签</h2>
+<h2 class="content-title nocount">标签</h2>
 <ul>
 {% for tag, articles in tags %}
     <li>{{ tag }} ( {{ articles | length }} )</a></li>

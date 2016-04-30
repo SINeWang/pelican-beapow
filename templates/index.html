@@ -51,7 +51,7 @@
 {% block sidebar %}
 <div class="sidebar">
 {% if SOCIAL %}
-    <h3>动态</h3>
+    <h3 class="nocount">动态</h3>
       <ul>
     {% for name, link in SOCIAL %}
         <li><a href="{{ link }}" target="_blank"><img src="/theme/images/icons/{{name.lower()}}.png"></img></a></li>
@@ -59,7 +59,7 @@
       </ul>
 {% endif %}
 {% if SITES %}
-    <h3>站点</h3>
+    <h3 class="nocount">站点</h3>
       <ul>
     {% for name, link in SITES %}
         <li><a href="{{ link }}">{{name}}</a></li>
