@@ -1,5 +1,5 @@
 body{
-  background-color: #E5E5E5;
+  background-color: #EEE;
   padding: 100px 0 0 0;
 }
 
@@ -15,8 +15,10 @@ div.article-title {
   text-decoration: none;
 }
 .article  {counter-reset: h2}
-.article-title > h1 {padding-bottom: 20px;}
-.article-summary {padding-bottom: 20px;}
+.article-title > h1 {padding: 0 0 20px 0;}
+.article-metadata {padding: 10 0 20 0px;}
+.article-summary {padding: 10px 30px 0 30px;}
+.article-content {padding: 30px 0 0 0;}
 
 .section > h2 {counter-reset: h3}
 .section > h3 {counter-reset: h4}
@@ -28,6 +30,7 @@ div.article-title {
 .section > h4 :before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "}
 .section > h5 :before {counter-increment: h5; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "}
 .section > h6 :before {counter-increment: h6; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "}
+.section > img {width: 100%}
 
 div.toc > {padding-left: -10px;}
 .toc ul {counter-reset: section; padding-left:0}
@@ -49,15 +52,23 @@ a.toc-backref {text-decoration: none;}
 .list-of-tags {
     margin: 0;
     overflow: hidden;
+    list-style: none;
+}
+.list-of-tags li {
+  margin: 0px;
+  float: left;
+  list-style:none;
 }
 .list-of-tags a {
-    padding: 3px 6px;
-    margin: 2px;
-    color: #222;
-    background: #EEE;
-    border-radius: 3px;
-    text-decoration: none;
+  padding: 3px 6px;
+  margin: 2px;
+  color: #222;
+  background: #E5E5E5;
+  border-radius: 5px;
+  float: center;
+  text-decoration: none;
 }
+
 
 ul, ol {
     padding: 0;

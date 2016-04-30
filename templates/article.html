@@ -8,12 +8,12 @@
         <div class="article-title">
             <h1>{{ article.title }}</h1>
         </div>
-        <div class="article-summary">
-            <p>{{ article.summary}}</p>
+        <div class="article-metadata">
+          {% include 'article-metadata.html' %}
         </div>
 
 
-        <div>{{ article.content }}</div>
+        <div class="article-content">{{ article.content }}</div>
     </div>
 {% endblock %}
 
@@ -21,31 +21,7 @@
 <div class="sidebar">
 {% if article.toc %}
     <h2>目录</h2>
-
-  {{article.toc}}
-{% endif %}
-
-{% if article.date %}
-    <h2>发布于</h2>
-    {% set day = article.date.strftime('%d')|int %}
-    <time pubdate="pubdate" datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b') }} {{ day }} {{- article.date.strftime(', %Y') }}</time>
-{% endif %}
-
-{% if article.category|trim|count > 0 %}
-    <h2>主题</h2>
-    <a class="category-link" href="{{ SITEURL }}/categories/{{ category.slug }}">{{ article.category }}</a>
-{% endif %}
-
-{% if article.tags and article.tags[0]|trim|count > 0 %}
-    <h2>标签</h2>
-    <ul class="list-of-tags tags-in-article">
-        {% for tag in article.tags|sort %}
-        <li><a href="{{ SITEURL }}/tags/{{ tag.slug }}">{{ tag }}</a>
-            {% for aTag, tagged_articles in tags if aTag == tag %}
-            <span style="vertical-align:super;font-size:0.8em">{{ tagged_articles|count }}</span>
-            {% endfor %}</li>
-        {% endfor %}
-    </ul>
+    {{article.toc}}
 {% endif %}
 </div>
 
