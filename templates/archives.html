@@ -1,29 +1,30 @@
 {% extends "includes/base93.html" %}
-{% block title %}{{ SITENAME }} <small>[archive]</small>{% endblock %}
+
+{% block title %} 文章 @ {{ SITENAME }}{% endblock %}
+
 {% block content %}
 <h1 style="text-align:center;">文章</h1>
 <hr>
 {% if dates %}
-  {% for article in dates %}
-
-    <ul class="timeline">
-      <li class="{{ loop.cycle('timeline', 'timeline-inverted') }}">
-        <div class="timeline-badge primary"><i class="glyphicon glyphicon-pencil"></i></div>
-          <div class="timeline-panel" onclick="location.href='{{ SITEURL }}/{{ article.url }}'">
-          <div class="timeline-heading">
-            <span class="timeline-title">{{ article.title }}</span>
+<ul class="timeline">
+    {% for article in dates %}
+        <li class="{{ loop.cycle('timeline', 'timeline-inverted') }}">
+          <div class="timeline-badge"><i class="glyphicon glyphicon-tint"></i></div>
+            <div class="timeline-panel" onclick="location.href='{{ SITEURL }}/{{ article.url }}'">
+            <div class="timeline-heading">
+              <h4>{{ article.title }}</h4>
+            </div>
+            <div class="timeline-body">
+              {{ article.summary }}
+            </div>
+            <div class="timeline-footer">
+              <p class="text-{{ loop.cycle('right', 'left') }}">{{ article.date.strftime("%Y-%m-%d") }}</p>
+            </div>
           </div>
-          <div class="timeline-body">
-            <p>{{ article.summary }}</p>
-          </div>
-          <div class="timeline-footer">
-            <p class="glyphicon">{{ article.date.strftime("%Y-%m-%d") }}</p>
-          </div>
-        </div>
-      </li>
-    </ul>
-
-  {% endfor %} {# For article #}
+        </li>
+    {% endfor %} {# For article #}
+    <li class="clearfix no-float"></li>
+  </ul>
 {% endif %} {# If dates #}
 
 {% endblock %}
