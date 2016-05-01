@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "includes/base93.html" %}
 {% block content_title %}{% endblock %}
 {% block content %}
 
@@ -20,7 +20,7 @@
     </div>
 
     {% if loop.length == 1 %}
-        {% include 'pagination.html' %}
+        {% include 'includes/pagination.html' %}
     {% endif %}
 
 {# other items #}
@@ -37,7 +37,7 @@
     </div>
 
     {% if loop.last and (articles_page.has_previous() or not articles_page.has_previous() and loop.length > 1) %}
-        {% include 'pagination.html' %}
+        {% include 'includes/pagination.html' %}
     {% endif %}
 
 {% endif %} {# First item if #}

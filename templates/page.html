@@ -1,4 +1,5 @@
-{% extends "base.html" %}
+{% extends "includes/base93.html" %}
+
 {% block title %}
 {{ page.title|striptags|e }} {%if page.subtitle %} - {{ page.subtitle|striptags|e }} {% endif %} @ {{ super() }}
 {% endblock title %}

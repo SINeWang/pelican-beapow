@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "includes/base93.html" %}
 {% block title %}
 {{ article.title|striptags|e }} {%if article.subtitle %} - {{ article.subtitle|striptags|e }} {% endif %} @ {{ super() }}
 {% endblock title %}
@@ -9,7 +9,7 @@
             <h1>{{ article.title }}</h1>
         </div>
         <div class="article-metadata">
-          {% include 'article-metadata.html' %}
+          {% include 'includes/article-metadata.html' %}
         </div>
 
 
