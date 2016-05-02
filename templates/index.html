@@ -78,9 +78,9 @@
       <div class="carousel-inner" role="listbox">
         {% for name, link, icon in MENUITEMS %}
             {% if loop.first %}
-        <div class="item active" onclick="/categories/{{ link }}">
+        <div class="item active" onclick="location.href='/categories/{{ link }}'">
             {% else %}
-        <div class="item" onclick="/categories/{{ link }}">
+        <div class="item" onclick="location.href='/categories/{{ link }}'">
             {% endif %}
             <img src="/images/carousel/{{link}}.png" class="slide-img">
             <div class="container">
