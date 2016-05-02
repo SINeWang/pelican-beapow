@@ -10,8 +10,11 @@ Just another theme for pelican.
 
 ## Live website ##
 
+### /index ###
 [![LiveWebSite](pelican-sinestuduio-0.png)](http://yanjiong.wang)
 
+### /archives ###
 [![LiveWebSite](pelican-sinestuduio-1.png)](http://yanjiong.wang)
 
+### /article ###
 [![LiveWebSite](pelican-sinestuduio-2.png)](http://yanjiong.wang)
