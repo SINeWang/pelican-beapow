@@ -1,4 +1,4 @@
-# pelican-sinestuduio #
+# pelican-sinestudio #
 
 Just another theme for pelican.
 
