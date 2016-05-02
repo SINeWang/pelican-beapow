@@ -53,6 +53,7 @@ a.toc-backref {text-decoration: none;}
     margin: 0;
     overflow: hidden;
     list-style: none;
+    display: inline-block;
 }
 .list-of-tags li {
   margin: 0px;

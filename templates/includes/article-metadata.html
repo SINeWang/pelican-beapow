@@ -1,25 +1,23 @@
-<div class="row">
-  <div class="col-md-3">
+<div class="text-center">
+  <p>
     {% set day = article.date.strftime('%d')|int %}
     <span class="glyphicon">{{ article.date.strftime("%Y-%m-%d") }}</span>
-  </div>
-  <div class="col-md-3">
+
     {% if article.category|trim|count > 0 %}
       <span class="glyphicon glyphicon-book"></span> <a class="category-link" href="{{ SITEURL }}/categories/{{ category.slug }}">{{ article.category }}</a>
     {% endif %}
-  </div>
-  <div class="col-md-6">
-    <ul class="list-of-tags tags-in-article">
-        {% for tag in article.tags|sort %}
-        <li><a href="{{ SITEURL }}/tags/{{ tag.slug }}">{{ tag }}
-            {% for aTag, tagged_articles in tags if aTag == tag %}
-              <sup>{{ tagged_articles|count }}</sup></a>
-            {% endfor %}
-        </li>
-        {% endfor %}
-    </ul>
-  </div>
-
+  </p>
+</div>
+<div class="text-center">
+  <ul class="list-of-tags tags-in-article">
+      {% for tag in article.tags|sort %}
+      <li><a href="{{ SITEURL }}/tags/{{ tag.slug }}">{{ tag }}
+          {% for aTag, tagged_articles in tags if aTag == tag %}
+            <sup>{{ tagged_articles|count }}</sup></a>
+          {% endfor %}
+      </li>
+      {% endfor %}
+  </ul>
 </div>
 {% if article.summary %}
 <div class="article-summary">
