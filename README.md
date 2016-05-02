@@ -1,6 +1,6 @@
 # pelican-sinestudio #
 
-Just another theme for pelican.
+the most Beautiful and Powerful theme for pelican.
 
 ## Thanks & Inspired By ##
 * [getpelican-themes/tuxlite_tbs](https://github.com/getpelican-themes/tuxlite_tbs)
