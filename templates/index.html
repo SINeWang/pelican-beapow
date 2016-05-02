@@ -47,7 +47,7 @@
 
     <div id="navbar" class="collapse navbar-collapse" aria-expanded="false" style="height:1px;">
         <ul class="nav navbar-nav">
-        {% for title, link, icon in MENUITEMS %}
+        {% for title, link in MENUITEMS %}
             <li><a href="/categories/{{ link }}">{{ title }}</a></li>
         {% endfor %}
 
@@ -67,7 +67,7 @@
   <div id="homeCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        {% for name, link, icon in MENUITEMS %}
+        {% for name, link in MENUITEMS %}
             {% if loop.index == 1 %}
               <li data-target="#homeCarousel" data-slide-to="{{loop.index - 1}}" class="active"></li>
             {% else %}
@@ -76,7 +76,7 @@
         {% endfor %}
       </ol>
       <div class="carousel-inner" role="listbox">
-        {% for name, link, icon in MENUITEMS %}
+        {% for name, link in MENUITEMS %}
             {% if loop.first %}
         <div class="item active" onclick="location.href='/categories/{{ link }}'">
             {% else %}
@@ -86,7 +86,7 @@
             <div class="container">
               <div class="carousel-caption">
                 <p>
-                  <span class="pull-left"><i class="glyphicon glyphicon-{{icon}}"></i> {{ name }}</span>
+                  <span class="pull-left">{{ name }}</span>
                 </p>
               </div>
             </div>
