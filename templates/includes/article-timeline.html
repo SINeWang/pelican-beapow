@@ -1,0 +1,12 @@
+<div class="timeline-badge"><i class="glyphicon glyphicon-tint"></i></div>
+  <div class="timeline-panel" onclick="location.href='{{ SITEURL }}/{{ article.url }}'">
+  <div class="timeline-heading">
+    <h4>{{ article.title }}</h4>
+  </div>
+  <div class="timeline-body">
+    {{ article.summary }}
+  </div>
+  <div class="timeline-footer">
+    <p class="text-{{ loop.cycle('right', 'left') }}">{{ article.date.strftime("%Y-%m-%d") }}</p>
+  </div>
+</div>

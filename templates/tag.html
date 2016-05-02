@@ -1,3 +1,19 @@
 {% extends "includes/base93.html" %}
 
-{% block title %}{{ SITENAME }} <small>{{ tag }}</small>{% endblock %}
+{% block title %} {{tag}} @ {{ super() }}{% endblock title %}
+
+{% block content %}
+<h1 style="text-align:center;">{{tag}}</h1>
+<hr>
+{% if articles %}
+<ul class="timeline">
+    {% for article in articles %}
+        <li class="{{ loop.cycle('timeline', 'timeline-inverted') }}">
+          {% include 'includes/article-timeline.html' %}
+        </li>
+    {% endfor %} {# For article #}
+    <li class="clearfix no-float"></li>
+</ul>
+{% endif %}
+
+{% endblock %}
