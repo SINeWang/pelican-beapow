@@ -126,14 +126,34 @@
                 {% endif %}
             </div>
               <div class="panel-heading">
-                  <h2 class="panel-title"><a href="/{{article.url}}">{{ article.title}}</a></h2>
+                  <span class="panel-title"><a href="/{{article.url}}">{{ article.title}}</a></span>
+                  <span class="glyphicon glyphicon-book"></span>
+                  <span><a href="/{{ article.category.url }}">{{ article.category }}</a></span>
               </div>
               <div class="panel-body">
-                  {{ article.summary}}
+                  {% if article.category|string() == "photos" %}
+                    {% set day = article.date.strftime('%d')|int %}
+                    <p>
+                      <img class="img-responsive img-rounded" src="/images/{{article.date.strftime("%Y/%m-%d")}}/{{article.slug}}.png" />
+                    </p>
+                  {% endif %}
+                  <p>
+                  {{ article.summary }}
+                  </p>
               </div>
+            {%if article.tags %}
               <div class="panel-footer">
-                  <span class="glyphicon glyphicon-book"> <i><a href="/{{ article.category.url }}">{{ article.category }}</a></i></span>
+                    <ul class="list-of-tags tags-in-article">
+                        {% for tag in article.tags|sort %}
+                        <li><a href="{{ SITEURL }}/tags/{{ tag.slug }}">{{ tag }}
+                            {% for aTag, tagged_articles in tags if aTag == tag %}
+                              <sup>{{ tagged_articles|count }}</sup></a>
+                            {% endfor %}
+                        </li>
+                        {% endfor %}
+                    </ul>
               </div>
+            {% endif %}
         </article>
       {% endfor %}
     {% endif %}
