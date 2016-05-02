@@ -1,17 +1,13 @@
 {% extends "includes/base93.html" %}
 
-{% block title %}
-{{category}} @ {{ super() }}
-{% endblock title %}
+{% block title %} {{category}} @ {{ super() }}{% endblock title %}
 
 {% block content %}
 <h1 style="text-align:center;">{{category}}</h1>
 <hr>
-
 {% if articles %}
 <ul class="timeline">
-{% for article in articles %}
-
+    {% for article in articles %}
         <li class="{{ loop.cycle('timeline', 'timeline-inverted') }}">
           <div class="timeline-badge"><i class="glyphicon glyphicon-tint"></i></div>
             <div class="timeline-panel" onclick="location.href='{{ SITEURL }}/{{ article.url }}'">
@@ -26,8 +22,9 @@
             </div>
           </div>
         </li>
+    {% endfor %} {# For article #}
     <li class="clearfix no-float"></li>
-{% endfor %}
-{% endif %}
 </ul>
+{% endif %}
+
 {% endblock %}
