@@ -14,6 +14,7 @@
 
     <link href="{{ SITEURL }}/theme/sinestudio.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/carousel.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/moments.css" rel="stylesheet">
 
     {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_ALL_ATOM }}" rel="alternate" title="{{ SITENAME }}" type="application/atom+xml">
@@ -103,19 +104,50 @@
       </a>
     </div><!-- /.carousel -->
 
-<div class="container marketing">
+<div class="container">
+  <div class="moments">
+    <div class="line text-muted"></div>
+    {% if articles %}
+      {% for article in articles_page.object_list %}
+        <div class="separator text-muted">
+          {% set day = article.date.strftime('%d')|int %}
+          <time>{{ article.date.strftime("%Y-%m-%d") }}</time>
+        </div>
+        <article class="panel panel-default">
+            <div class="panel-heading icon">
+                {% if article.category|string() == "ideas" %}
+                <i class="glyphicon glyphicon-flag"></i>
+                {% elif article.category|string() == "moments" %}
+                <i class="glyphicon glyphicon-flash"></i>
+                {% elif article.category|string() == "practices" %}
+                <i class="glyphicon glyphicon-wrench"></i>
+                {% elif article.category|string() == "photos" %}
+                <i class="glyphicon glyphicon-camera"></i>
+                {% endif %}
+            </div>
+              <div class="panel-heading">
+                  <h2 class="panel-title"><a href="/{{article.url}}">{{ article.title}}</a></h2>
+              </div>
+              <div class="panel-body">
+                  {{ article.summary}}
+              </div>
+              <div class="panel-footer">
+                  <span class="glyphicon glyphicon-book"> <i><a href="/{{ article.category.url }}">{{ article.category }}</a></i></span>
+              </div>
+        </article>
+      {% endfor %}
+    {% endif %}
 
-  <div class="row">
-    <div class="col-lg-4">
-      <a href="/categories/ideas"><span style="font-size: 5em;color:#555;"><i class="glyphicon glyphicon-flag"></i></span></a>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <a href="/categories/practices"><span style="font-size: 5em;color:#555;"><i class="glyphicon glyphicon-wrench"></i></span></a>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <a href="#"><span style="font-size: 5em;color:#555;"><i class="glyphicon glyphicon-camera"></i></span></a>
-    </div><!-- /.col-lg-4 -->
-  </div><!-- /.row -->
+    <article class="panel panel-default panel-outline">
+        <div class="panel-heading icon">
+            <i class="glyphicon glyphicon-info-sign"></i>
+        </div>
+        <div class="panel-body">
+            <i>以上是最新的{{DEFAULT_PAGINATION}}次更新</i>
+        </div>
+    </article>
+
+  </div>
 </div>
 
 <div class="footer">

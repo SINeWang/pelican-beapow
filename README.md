@@ -7,6 +7,7 @@ Just another theme for pelican.
 * [Automatic Heading Numbers with CSS](http://philarcher.org/diary/2013/headingnumbers/)
 * [Vertical Responsive Timeline using Bootstrap](http://jenniferperrin.com/article.php?post=Vertical-Responsive-Timeline-using-Bootstrap)
 * [Bootstrap-Carousel](http://getbootstrap.com/examples/carousel/)
+* [Single Column Responsive Timeline](http://bootsnipp.com/snippets/featured/single-column-responsive-timeline)
 
 ## Live website ##
 
