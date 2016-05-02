@@ -47,8 +47,8 @@
 
     <div id="navbar" class="collapse navbar-collapse" aria-expanded="false" style="height:1px;">
         <ul class="nav navbar-nav">
-        {% for title, link in MENUITEMS %}
-            <li><a href="{{ link }}">{{ title }}</a></li>
+        {% for title, link, icon in MENUITEMS %}
+            <li><a href="/categories/{{ link }}">{{ title }}</a></li>
         {% endfor %}
 
         {% if DISPLAY_PAGES_ON_MENU %}
