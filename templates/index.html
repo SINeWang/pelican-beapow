@@ -130,7 +130,7 @@
                   <span class="glyphicon glyphicon-book"></span>
                   <span><a href="/{{ article.category.url }}">{{ article.category }}</a></span>
               </div>
-              <div class="panel-body">
+              <div class="panel-body"  onclick="location.href='/{{article.url}}'" style="cursor:pointer;">
                   {% if article.category|string() == "photos" %}
                     {% set day = article.date.strftime('%d')|int %}
                     <p>
