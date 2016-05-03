@@ -1,4 +1,4 @@
-# pelican-sinestudio #
+# pelican-beapow #
 
 the most Beautiful and Powerful theme for pelican.
 
