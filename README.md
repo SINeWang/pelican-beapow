@@ -12,10 +12,10 @@ the most Beautiful and Powerful theme for pelican.
 ## Live website ##
 
 ### /index ###
-[![LiveWebSite](pelican-sinestuduio-0.png)](http://yanjiong.wang)
+[![LiveWebSite](pelican-beapow-0.png)](http://yanjiong.wang)
 
 ### /archives ###
-[![LiveWebSite](pelican-sinestuduio-1.png)](http://yanjiong.wang)
+[![LiveWebSite](pelican-beapow-1.png)](http://yanjiong.wang)
 
 ### /article ###
-[![LiveWebSite](pelican-sinestuduio-2.png)](http://yanjiong.wang)
+[![LiveWebSite](pelican-beapow-2.png)](http://yanjiong.wang)
