@@ -128,7 +128,11 @@
               <div class="panel-heading">
                   <span class="panel-title"><a href="/{{article.url}}">{{ article.title}}</a></span>
                   <span class="glyphicon glyphicon-book"></span>
-                  <span><a href="/{{ article.category.url }}">{{ article.category }}</a></span>
+                  {% for name, category in MENUITEMS %}
+                    {% if article.category | string() == category | string() %}
+                  <span><a href="/{{ article.category.url }}">{{ name }}</a></span>
+                    {% endif %}
+                  {% endfor %}
               </div>
               <div class="panel-body"  onclick="location.href='/{{article.url}}'" style="cursor:pointer;">
                   {% if article.category|string() == "photos" %}
