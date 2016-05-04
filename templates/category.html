@@ -1,9 +1,24 @@
 {% extends "includes/base93.html" %}
 
-{% block title %} {{category}} @ {{ super() }}{% endblock title %}
+
+{% block title %}
+  {% for name, slug in MENUITEMS %}
+    {% if category | string() == slug | string() %}
+        {{name}} @ {{ super() }}
+    {% endif %}
+  {% endfor %}
+{% endblock title %}
 
 {% block content %}
-<h1 style="text-align:center;">{{category}}</h1>
+  {% for name, slug in MENUITEMS %}
+    {% if category | string() == slug | string() %}
+<h1 style="text-align:center;">{{name}}</h1>
+    {% endif %}
+  {% endfor %}
+
+
+
+
 <hr>
 {% if articles %}
 <ul class="timeline">

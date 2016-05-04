@@ -128,8 +128,8 @@
               <div class="panel-heading">
                   <span class="panel-title"><a href="/{{article.url}}">{{ article.title}}</a></span>
                   <span class="glyphicon glyphicon-book"></span>
-                  {% for name, category in MENUITEMS %}
-                    {% if article.category | string() == category | string() %}
+                  {% for name, slug in MENUITEMS %}
+                    {% if article.category | string() == slug | string() %}
                   <span><a href="/{{ article.category.url }}">{{ name }}</a></span>
                     {% endif %}
                   {% endfor %}
