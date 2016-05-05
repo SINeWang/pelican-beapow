@@ -9,6 +9,10 @@ the most Beautiful and Powerful theme for pelican.
 * [Bootstrap-Carousel](http://getbootstrap.com/examples/carousel/)
 * [Single Column Responsive Timeline](http://bootsnipp.com/snippets/featured/single-column-responsive-timeline)
 
+## To-do LiveWebSite
+* WaterFall layout for category index page
+* ReactJS/JSX
+
 ## Live website ##
 
 ### /index ###
