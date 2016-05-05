@@ -88,6 +88,9 @@
     {% for social, link in SOCIAL %}
       <a href="{{link}}"><img src="/theme/images/icons/{{social|lower()}}.png"/></a>
     {% endfor %}
+    {% for site, link in LINKS %}
+       · <a href="{{link}}">{{site}}</a>
+    {% endfor %}
   </p>
   <p>Powered By <a href="//getpelican.com">Pelican</a> & <a href="https://github.com/sinewang/pelican-beapow">beapow</a></p>
 </div>
