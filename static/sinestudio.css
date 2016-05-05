@@ -76,6 +76,10 @@ ul, ol {
     margin: 0 0 0 20px;
 }
 
+blockquote {
+  font-size: 1em;
+}
+
 .footer {
   position: relative;;
   right: 0;
