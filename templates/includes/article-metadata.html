@@ -4,7 +4,12 @@
     <span class="glyphicon">{{ article.date.strftime("%Y-%m-%d") }}</span>
 
     {% if article.category|trim|count > 0 %}
-      <span class="glyphicon glyphicon-book"></span> <a class="category-link" href="{{ SITEURL }}/categories/{{ category.slug }}">{{ article.category }}</a>
+      {% for name, slug in MENUITEMS %}
+        {% if category | string() == slug | string() %}
+          <span class="glyphicon glyphicon-book"></span> <a class="category-link" href="{{ SITEURL }}/categories/{{ category.slug }}">{{ name }}</a>
+        {% endif %}
+      {% endfor %}
+      
     {% endif %}
   </p>
 </div>
