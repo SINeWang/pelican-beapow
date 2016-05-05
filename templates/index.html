@@ -52,11 +52,6 @@
             <li><a href="/categories/{{ link }}">{{ title }}</a></li>
         {% endfor %}
 
-        {% if DISPLAY_PAGES_ON_MENU %}
-        {% for page in PAGES %}
-            <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-        {% endfor %}
-        {% endif %}
         </ul>
         <p class="navbar-text navbar-right">{{SLOGAN}}</p>
     </div>
@@ -185,7 +180,19 @@
        · <a href="{{link}}">{{site}}</a>
     {% endfor %}
   </p>
+  <p>
+    {% if DISPLAY_PAGES_ON_MENU %}
+      {% for page in PAGES %}
+          {% if loop.first %}
+          <a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
+          {% else %}
+          | <a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
+          {% endif %}
+      {% endfor %}
+    {% endif %}
+  </p>
   <p>Powered By <a href="//getpelican.com">Pelican</a> & <a href="https://github.com/sinewang/pelican-beapow">beapow</a></p>
+
 </div>
 <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.js"></script>
 
