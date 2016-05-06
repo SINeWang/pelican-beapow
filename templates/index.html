@@ -105,7 +105,6 @@
     {% if articles %}
       {% for article in articles_page.object_list %}
         <div class="separator text-muted">
-          {% set day = article.date.strftime('%d')|int %}
           <time>{{ article.date.strftime("%Y-%m-%d") }}</time>
         </div>
         <article class="panel panel-default">
@@ -131,7 +130,6 @@
               </div>
               <div class="panel-body"  onclick="location.href='/{{article.url}}'" style="cursor:pointer;">
                   {% if article.category|string() == "photos" %}
-                    {% set day = article.date.strftime('%d')|int %}
                     <p>
                       <img class="img-responsive img-rounded" src="/images/{{article.date.strftime("%Y/%m-%d")}}/{{article.slug}}.png" />
                     </p>

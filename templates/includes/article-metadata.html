@@ -1,6 +1,5 @@
 <div class="text-center">
   <p>
-    {% set day = article.date.strftime('%d')|int %}
     <span class="glyphicon">{{ article.date.strftime("%Y-%m-%d") }}</span>
 
     {% if article.category|trim|count > 0 %}
@@ -9,7 +8,7 @@
           <span class="glyphicon glyphicon-book"></span> <a class="category-link" href="{{ SITEURL }}/categories/{{ category.slug }}">{{ name }}</a>
         {% endif %}
       {% endfor %}
-      
+
     {% endif %}
   </p>
 </div>
