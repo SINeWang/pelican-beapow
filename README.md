@@ -19,7 +19,7 @@ the most Beautiful and Powerful theme for pelican.
 
 ### carousel-image path ###
 
-   /content/images/carsouel/<category-slug>.png
+    /content/images/carsouel/<category-slug>.png
 
 ## Live website ##
 
