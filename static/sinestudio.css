@@ -89,3 +89,7 @@ blockquote {
   background-color: #efefef;
   text-align: center;
 }
+
+a[title~="站长统计"] {
+  display: none;
+}
