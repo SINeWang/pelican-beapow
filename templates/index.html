@@ -103,77 +103,71 @@
 
 <div class="container">
 
-  <div class="row">
-    <div class="col-md-8">
-      <div class="moments">
-        <div class="line text-muted"></div>
-        {% if articles %}
-          {% for article in articles_page.object_list %}
-            <div class="separator text-muted">
-              <time>{{ article.date.strftime("%Y-%m-%d") }}</time>
-            </div>
-            <article class="panel panel-default">
-                <div class="panel-heading icon">
-                    {% if article.category|string() == "ideas" %}
-                    <i class="glyphicon glyphicon-flag"></i>
-                    {% elif article.category|string() == "moments" %}
-                    <i class="glyphicon glyphicon-flash"></i>
-                    {% elif article.category|string() == "practices" %}
-                    <i class="glyphicon glyphicon-wrench"></i>
-                    {% elif article.category|string() == "photos" %}
-                    <i class="glyphicon glyphicon-camera"></i>
-                    {% endif %}
-                </div>
-                  <div class="panel-heading">
-                      <span class="panel-title"><a href="/{{article.url}}">{{ article.title}}</a></span>
-                      <span class="glyphicon glyphicon-book"></span>
-                      {% for name, slug in MENUITEMS %}
-                        {% if article.category | string() == slug | string() %}
-                      <span><a href="/{{ article.category.url }}">{{ name }}</a></span>
-                        {% endif %}
-                      {% endfor %}
-                  </div>
-                  <div class="panel-body"  onclick="location.href='/{{article.url}}'" style="cursor:pointer;">
-                      {% if article.category|string() == "photos" %}
-                        <p>
-                          <img class="img-responsive img-rounded" src="/images/{{article.date.strftime("%Y/%m-%d")}}/{{article.slug}}.png" />
-                        </p>
-                      {% endif %}
-                      <p>
-                      {{ article.summary }}
-                      </p>
-                  </div>
-                {%if article.tags %}
-                  <div class="panel-footer">
-                        <ul class="list-of-tags tags-in-article">
-                            {% for tag in article.tags|sort %}
-                            <li><a href="{{ SITEURL }}/tags/{{ tag.slug }}">{{ tag }}
-                                {% for aTag, tagged_articles in tags if aTag == tag %}
-                                  <sup>{{ tagged_articles|count }}</sup></a>
-                                {% endfor %}
-                            </li>
-                            {% endfor %}
-                        </ul>
-                  </div>
-                {% endif %}
-            </article>
-          {% endfor %}
-        {% endif %}
-
-        <article class="panel panel-default panel-outline">
+  <div class="moments">
+    <div class="line text-muted"></div>
+    {% if articles %}
+      {% for article in articles_page.object_list %}
+        <div class="separator text-muted">
+          <time>{{ article.date.strftime("%Y-%m-%d") }}</time>
+        </div>
+        <article class="panel panel-default">
             <div class="panel-heading icon">
-                <i class="glyphicon glyphicon-info-sign"></i>
+                {% if article.category|string() == "ideas" %}
+                <i class="glyphicon glyphicon-flag"></i>
+                {% elif article.category|string() == "moments" %}
+                <i class="glyphicon glyphicon-flash"></i>
+                {% elif article.category|string() == "practices" %}
+                <i class="glyphicon glyphicon-wrench"></i>
+                {% elif article.category|string() == "photos" %}
+                <i class="glyphicon glyphicon-camera"></i>
+                {% endif %}
             </div>
-            <div class="panel-body">
-                <i>以上是最新的{{DEFAULT_PAGINATION}}次更新</i>
-            </div>
+              <div class="panel-heading">
+                  <span class="panel-title"><a href="/{{article.url}}">{{ article.title}}</a></span>
+                  <span class="glyphicon glyphicon-book"></span>
+                  {% for name, slug in MENUITEMS %}
+                    {% if article.category | string() == slug | string() %}
+                  <span><a href="/{{ article.category.url }}">{{ name }}</a></span>
+                    {% endif %}
+                  {% endfor %}
+              </div>
+              <div class="panel-body"  onclick="location.href='/{{article.url}}'" style="cursor:pointer;">
+                  {% if article.category|string() == "photos" %}
+                    <p>
+                      <img class="img-responsive img-rounded" src="/images/{{article.date.strftime("%Y/%m-%d")}}/{{article.slug}}.png" />
+                    </p>
+                  {% endif %}
+                  <p>
+                  {{ article.summary }}
+                  </p>
+              </div>
+            {%if article.tags %}
+              <div class="panel-footer">
+                    <ul class="list-of-tags tags-in-article">
+                        {% for tag in article.tags|sort %}
+                        <li><a href="{{ SITEURL }}/tags/{{ tag.slug }}">{{ tag }}
+                            {% for aTag, tagged_articles in tags if aTag == tag %}
+                              <sup>{{ tagged_articles|count }}</sup></a>
+                            {% endfor %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+              </div>
+            {% endif %}
         </article>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=2&isTitle=0&noborder=1&isWeibo=1&isFans=1&uid={{WEIBO_UID}}&verifier={{WEIBO_VERIFIER}}&dpc=1"></iframe>
-    </div>
+      {% endfor %}
+    {% endif %}
+
+    <article class="panel panel-default panel-outline">
+        <div class="panel-heading icon">
+            <i class="glyphicon glyphicon-info-sign"></i>
+        </div>
+        <div class="panel-body">
+            <i>以上是最新的{{DEFAULT_PAGINATION}}次更新</i>
+        </div>
+    </article>
   </div>
+
 </div>
 
 <div class="footer">
