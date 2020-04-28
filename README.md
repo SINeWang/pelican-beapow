@@ -21,10 +21,6 @@ the most Beautiful and Powerful theme for pelican.
 
     /content/images/carsouel/<category-slug>.png
 
-## Features
-
-* Support CNZZ site statistics
-
 ## Live website ##
 
 ### /index ###
