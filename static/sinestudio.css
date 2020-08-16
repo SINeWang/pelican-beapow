@@ -1,5 +1,6 @@
 body{
   background-color: #ddd;
+  line-height: 1.8;
 }
 .navbar-brand {font-size: 1.2em;}
 
@@ -73,6 +74,7 @@ a.toc-backref {text-decoration: none;}
 
 ul, ol {
     padding: 0;
+    line-height: 1.8;
     margin: 0 0 0 20px;
 }
 
@@ -88,10 +90,6 @@ blockquote {
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
-}
-
-a[title~="站长统计"] {
-  display: none;
 }
 
 a[href ^= "http"]:after {
