@@ -3,6 +3,11 @@ body{
   line-height: 1.8;
 }
 .navbar-brand {font-size: 1.2em;}
+span.hlb {color:#2874A6;font-weight: bold;}
+span.p {color:#515A5A;font-style: italic;}
+span.p::before{
+  content:"~";
+}
 
 h1 {font-size: 1.8em;}
 h2 {font-size: 1.5em;}
@@ -40,6 +45,12 @@ div.toc > {padding-left: -10px;}
 
 
 a.toc-backref {text-decoration: none;}
+a{
+  color: #283747;
+}
+p{
+  color: #1B2631;
+}
 
 
 .sidebar {
