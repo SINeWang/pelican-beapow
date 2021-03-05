@@ -3,7 +3,8 @@ body{
   line-height: 1.8;
 }
 .navbar-brand {font-size: 1.2em;}
-span.hlb {color:#2874A6;font-weight: bold;}
+span.hlb {color:#2874A6;}
+span.hlr {color:#943126;}
 span.p {color:#515A5A;font-style: italic;}
 span.p::before{
   content:"~";
