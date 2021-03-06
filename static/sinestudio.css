@@ -152,6 +152,7 @@ p {
     border-color: #FB0000;
     border-radius: 15px;
     border-width: medium;
+    overflow: visible;
 }
 
 .list-of-tags {
