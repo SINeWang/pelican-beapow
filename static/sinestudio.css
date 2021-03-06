@@ -1,65 +1,161 @@
-body{
-  background-color: #ddd;
-  line-height: 1.8;
-}
-.navbar-brand {font-size: 1.2em;}
-span.hlb {color:#2874A6;}
-span.hlr {color:#943126;}
-span.p {color:#515A5A;font-style: italic;}
-span.p::before{
-  content:"~";
+body {
+    background-color: #ddd;
+    line-height: 1.8;
 }
 
-h1 {font-size: 1.8em;}
-h2 {font-size: 1.5em;}
-h3 {font-size: 1.2em;}
-h4 {font-size: 0.9em;}
-h5 {font-size: 0.6em;}
-h6 {font-size: 0.3em;}
+.navbar-brand {
+    font-size: 1.2em;
+}
+
+span.hlb {
+    color: #2874A6;
+}
+
+span.hlr {
+    color: #943126;
+}
+
+span.p {
+    color: #464a4a;
+    font-style: italic;
+}
+
+span.p::before {
+    content: "~";
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 0.9em;
+}
+
+h5 {
+    font-size: 0.6em;
+}
+
+h6 {
+    font-size: 0.3em;
+}
 
 div.article-title {
-  text-align: center;
-  text-decoration: none;
+    text-align: center;
+    text-decoration: none;
 }
-.article  {counter-reset: h2}
-.article-title > h1 {padding: 0 0 20px 0;}
-.article-metadata {padding: 10 0 20 0px;}
-.article-summary {padding: 10px 30px 0 30px;}
-.article-content {padding: 30px 0 0 0;}
 
-.section > h2 {counter-reset: h3}
-.section > h3 {counter-reset: h4}
-.section > h4 {counter-reset: h5}
-.section > h5 {counter-reset: h6}
-
-.section > h2 :before {counter-increment: h2; content: counter(h2) ". "}
-.section > h3 :before {counter-increment: h3; content: counter(h2) "." counter(h3) ". "}
-.section > h4 :before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "}
-.section > h5 :before {counter-increment: h5; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "}
-.section > h6 :before {counter-increment: h6; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "}
-.section > img {width: 100%}
-
-div.toc > {padding-left: -10px;}
-.toc ul {counter-reset: section; padding-left:0}
-.toc ul li {list-style-type: none;}
-.toc ul li:before {counter-increment: section; content: counters(section, ".") ". "}
-
-
-a.toc-backref {text-decoration: none;}
-a{
-  color: #283747;
+.article {
+    counter-reset: h2
 }
-p{
-  color: #1B2631;
+
+.article-title > h1 {
+    padding: 0 0 20px 0;
+}
+
+.article-metadata {
+    padding: 10px 0 20px 0;
+}
+
+.article-summary {
+    padding: 10px 30px 0 30px;
+}
+
+.article-content {
+    padding: 30px 0 0 0;
+}
+
+.section > h2 {
+    counter-reset: h3
+}
+
+.section > h3 {
+    counter-reset: h4
+}
+
+.section > h4 {
+    counter-reset: h5
+}
+
+.section > h5 {
+    counter-reset: h6
+}
+
+.section > h2 :before {
+    counter-increment: h2;
+    content: counter(h2) ". "
+}
+
+.section > h3 :before {
+    counter-increment: h3;
+    content: counter(h2) "." counter(h3) ". "
+}
+
+.section > h4 :before {
+    counter-increment: h4;
+    content: counter(h2) "." counter(h3) "." counter(h4) ". "
+}
+
+.section > h5 :before {
+    counter-increment: h5;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "
+}
+
+.section > h6 :before {
+    counter-increment: h6;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "
+}
+
+.section > img {
+    width: 100%
+}
+
+div.toc > {
+    padding-left: -10px;
+}
+
+.toc ul {
+    counter-reset: section;
+    padding-left: 0
+}
+
+.toc ul li {
+    list-style-type: none;
+}
+
+.toc ul li:before {
+    counter-increment: section;
+    content: counters(section, ".") ". "
+}
+
+
+a.toc-backref {
+    text-decoration: none;
+}
+
+a {
+    color: #283747;
+}
+
+p {
+    color: #1f2732;
 }
 
 
 .sidebar {
-  font-size: 0.9em;
-  position: fixed;
-  border-color: #FB0000;
-  border-radius: 15px;
-  border-width: medium;
+    font-size: 0.9em;
+    position: fixed;
+    border-color: #FB0000;
+    border-radius: 15px;
+    border-width: medium;
 }
 
 .list-of-tags {
@@ -68,19 +164,20 @@ p{
     list-style: none;
     display: inline-block;
 }
+
 .list-of-tags li {
-  margin: 0px;
-  float: left;
-  list-style:none;
+    margin: 0;
+    float: left;
+    list-style: none;
 }
+
 .list-of-tags a {
-  padding: 3px 6px;
-  margin: 2px;
-  color: #222;
-  background: #E5E5E5;
-  border-radius: 5px;
-  float: center;
-  text-decoration: none;
+    padding: 3px 6px;
+    margin: 2px;
+    color: #222;
+    background: #E5E5E5;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
 
@@ -91,19 +188,19 @@ ul, ol {
 }
 
 blockquote {
-  font-size: 1em;
+    font-size: 1em;
 }
 
 .footer {
-  position: relative;;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #efefef;
-  text-align: center;
+    position: relative;;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
 }
 
 a[href ^= "http"]:after {
-     content: " " url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVR4Xn3PgQkAMQhDUXfqTu7kTtkpd5RA8AInfArtQ2iRXFWT2QedAfttj2FsPIOE1eCOlEuoWWjgzYaB/IkeGOrxXhqB+uA9Bfcm0lAZuh+YIeAD+cAqSz4kCMUAAAAASUVORK5CYII=);
+    content: " " url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVR4Xn3PgQkAMQhDUXfqTu7kTtkpd5RA8AInfArtQ2iRXFWT2QedAfttj2FsPIOE1eCOlEuoWWjgzYaB/IkeGOrxXhqB+uA9Bfcm0lAZuh+YIeAD+cAqSz4kCMUAAAAASUVORK5CYII=);
 }
