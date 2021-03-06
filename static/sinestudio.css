@@ -25,27 +25,19 @@ span.p::before {
 }
 
 h1 {
-    font-size: 1.8em;
+    font-size: 2.0em;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 h4 {
-    font-size: 0.9em;
-}
-
-h5 {
-    font-size: 0.6em;
-}
-
-h6 {
-    font-size: 0.3em;
+    font-size: 1.2em;
 }
 
 div.article-title {
@@ -53,9 +45,6 @@ div.article-title {
     text-decoration: none;
 }
 
-.article {
-    counter-reset: h2
-}
 
 .article-title > h1 {
     padding: 0 0 20px 0;
@@ -72,6 +61,11 @@ div.article-title {
 .article-content {
     padding: 30px 0 0 0;
 }
+
+/*.article {*/
+/*    counter-reset: h2*/
+/*}*/
+
 
 /*.section > h2 {*/
 /*    counter-reset: h3*/
