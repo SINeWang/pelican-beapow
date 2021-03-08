@@ -18,6 +18,8 @@ span.hlr {
 span.p {
     color: #464a4a;
     font-style: italic;
+    position: absolute;
+    left: 0;
 }
 
 span.p::before {
@@ -136,8 +138,11 @@ a.toc-backref {
     color: #3e4245;
 }
 
-p {
+.beapow-article p {
     color: #1f2732;
+    position: relative;
+    padding: 0 0 0 50px;
+    text-align: justify;
 }
 
 .sidebar {
@@ -178,8 +183,18 @@ ul, ol {
     margin: 0 0 0 20px;
 }
 
-blockquote {
+.beapow-article blockquote {
     font-size: 1em;
+    margin-left: 50px;
+    background: rgba(255,255,255,0.2);
+}
+.beapow-article blockquote p {
+    padding-left: 0;
+}
+
+.beapow-article ul,
+.beapow-article ol {
+    margin-left: 50px;
 }
 
 .footer {
