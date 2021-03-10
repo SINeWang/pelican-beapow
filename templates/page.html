@@ -1,4 +1,4 @@
-{% extends "includes/base93.html" %}
+{% extends "includes/base-full.html" %}
 
 {% block title %}
 {{ page.title|striptags|e }} {%if page.subtitle %} - {{ page.subtitle|striptags|e }} {% endif %} @ {{ super() }}
@@ -16,6 +16,6 @@
       {% endif %}
     </div>
 
-    <div class="article-content">{{ page.content }}</div>
+    <div class="article-content beapow-page">{{ page.content }}</div>
 </div>
 {% endblock %}

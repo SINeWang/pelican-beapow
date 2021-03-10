@@ -138,13 +138,6 @@ a.toc-backref {
     color: #3e4245;
 }
 
-.beapow-article p {
-    color: #1f2732;
-    position: relative;
-    padding: 0 0 0 50px;
-    text-align: justify;
-}
-
 .sidebar {
     font-size: 0.9em;
     position: absolute;
@@ -200,6 +193,39 @@ ul, ol {
 .beapow-article ul,
 .beapow-article ol {
     margin-left: 50px;
+}
+
+.beapow-article p {
+    color: #1f2732;
+    position: relative;
+    padding: 0 0 0 50px;
+    text-align: justify;
+}
+
+.beapow-page li {
+    margin: 20px;
+}
+
+.beapow-page blockquote {
+    font-size: 1em;
+    margin-left: 50px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.beapow-page blockquote p {
+    padding-left: 0;
+}
+
+.beapow-page ul,
+.beapow-page ol {
+    margin-left: 50px;
+}
+
+.beapow-page p {
+    color: #1f2732;
+    position: relative;
+    padding: 0 0 0 50px;
+    text-align: justify;
 }
 
 .footer {
