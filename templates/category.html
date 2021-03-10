@@ -2,7 +2,7 @@
 
 
 {% block title %}
-  {% for name, slug in MENUITEMS %}
+  {% for name, slug in CATEGORY_ITEMS %}
     {% if category | string() == slug | string() %}
         {{name}} @ {{ super() }}
     {% endif %}
@@ -10,7 +10,7 @@
 {% endblock title %}
 
 {% block content %}
-  {% for name, slug in MENUITEMS %}
+  {% for name, slug in CATEGORY_ITEMS %}
     {% if category | string() == slug | string() %}
 <h1 style="text-align:center;">{{name}}</h1>
     {% endif %}
