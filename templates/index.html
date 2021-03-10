@@ -48,10 +48,12 @@
 
     <div id="navbar" class="collapse navbar-collapse" aria-expanded="false" style="height:1px;">
         <ul class="nav navbar-nav">
-        {% for title, link in MENUITEMS %}
+        {% for title, link in CATEGORY_ITEMS %}
             <li><a href="/categories/{{ link }}">{{ title }}</a></li>
         {% endfor %}
-
+        {% for title, link in PAGE_ITEMS %}
+            <li><a href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
         </ul>
         <p class="navbar-text navbar-right">{{SLOGAN}}</p>
     </div>
@@ -63,7 +65,7 @@
   <div id="homeCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        {% for name, link in MENUITEMS %}
+        {% for name, link in CATEGORY_ITEMS %}
             {% if loop.index == 1 %}
               <li data-target="#homeCarousel" data-slide-to="{{loop.index - 1}}" class="active"></li>
             {% else %}
@@ -72,7 +74,7 @@
         {% endfor %}
       </ol>
       <div class="carousel-inner" role="listbox">
-        {% for name, link in MENUITEMS %}
+        {% for name, link in CATEGORY_ITEMS %}
             {% if loop.first %}
         <div class="item active" onclick="location.href='/categories/{{ link }}'">
             {% else %}
@@ -197,7 +199,7 @@
 </div>
 <script src="//cdn.bootcss.com/jquery/1.12.1/jquery.js"></script>
 
-<script src="{{ SITEURL }}/theme/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="{{ SITEURL }}/theme/css/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 </body>
 </html>
