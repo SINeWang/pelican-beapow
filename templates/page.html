@@ -1,4 +1,4 @@
-{% extends "includes/base-full.html" %}
+{% extends "includes/base93.html" %}
 
 {% block title %}
 {{ page.title|striptags|e }} {%if page.subtitle %} - {{ page.subtitle|striptags|e }} {% endif %} @ {{ super() }}
@@ -18,4 +18,14 @@
 
     <div class="article-content beapow-page">{{ page.content }}</div>
 </div>
+{% endblock %}
+
+{% block sidebar %}
+<div class="sidebar">
+{% if page.toc %}
+    <h2>目录</h2>
+    {{page.toc}}
+{% endif %}
+</div>
+
 {% endblock %}
