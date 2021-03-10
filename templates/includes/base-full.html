@@ -61,6 +61,9 @@
         {% for title, link in CATEGORY_ITEMS %}
             <li><a href="/categories/{{ link }}">{{ title }}</a></li>
         {% endfor %}
+        {% for title, link in PAGE_ITEMS %}
+            <li><a href="/{{ link }}">{{ title }}</a></li>
+        {% endfor %}
         </ul>
         <p class="navbar-text navbar-right">{{SLOGAN}}</p>
     </div>
