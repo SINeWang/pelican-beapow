@@ -136,7 +136,7 @@ div.toc > {
 a.toc-backref {
     text-decoration: none;
     color: #3e4245;
-    background: lightgrey;
+    background: #ffffff3d;
 }
 
 .sidebar {
@@ -178,7 +178,7 @@ ul, ol {
 }
 
 .beapow-article li {
-    margin: 0 0 0 20px;
+    margin: 0;
 }
 
 .beapow-article blockquote {
@@ -193,10 +193,36 @@ ul, ol {
 
 .beapow-article ul,
 .beapow-article ol {
-    margin-left: 50px;
+    margin-left: 30px;
 }
 
 .beapow-article p {
+    color: #1f2732;
+    position: relative;
+    padding: 0 0 0 30px;
+    text-align: justify;
+}
+
+.beapow-book-digests li {
+    margin: 0 0 0 20px;
+}
+
+.beapow-book-digests blockquote {
+    font-size: 1em;
+    margin-left: 50px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.beapow-book-digests blockquote p {
+    padding-left: 0;
+}
+
+.beapow-book-digests ul,
+.beapow-book-digests ol {
+    margin-left: 50px;
+}
+
+.beapow-book-digests p {
     color: #1f2732;
     position: relative;
     padding: 0 0 0 50px;
