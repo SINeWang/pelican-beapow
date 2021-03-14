@@ -200,7 +200,7 @@ ul, ol {
     color: #1f2732;
     position: relative;
     padding: 0 0 0 30px;
-    text-align: justify;
+    /*text-align: justify;*/
 }
 
 .beapow-book-digests li {
