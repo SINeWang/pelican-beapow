@@ -15,14 +15,14 @@ span.hlr {
     color: #943126;
 }
 
-span.p {
+span.page {
     color: #464a4a;
     font-style: italic;
     position: absolute;
     left: 0;
 }
 
-span.p::before {
+span.page::before {
     content: "~";
 }
 
