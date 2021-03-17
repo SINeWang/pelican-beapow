@@ -200,7 +200,6 @@ ul, ol {
     color: #1f2732;
     position: relative;
     padding: 0 0 0 30px;
-    /*text-align: justify;*/
 }
 
 .beapow-book-digests li {
@@ -227,6 +226,7 @@ ul, ol {
     position: relative;
     padding: 0 0 0 50px;
     text-align: justify;
+    font-size: 1.2em;
     font-family: adobe-garamond-pro, serif;
 }
 
