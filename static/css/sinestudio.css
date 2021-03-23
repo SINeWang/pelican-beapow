@@ -205,6 +205,7 @@ ul, ol {
 .beapow-article p {
     color: #1f2732;
     position: relative;
+    text-align: justify;
     padding: 0 0 0 30px;
 }
 
