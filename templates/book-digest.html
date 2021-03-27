@@ -1,6 +1,7 @@
 {% extends "includes/base93.html" %}
 {% block title %}
-{{ article.title|striptags|e }} {%if article.subtitle %} - {{ article.subtitle|striptags|e }} {% endif %} @ {{ super() }}
+    {{ article.title|striptags|e }} {% if article.subtitle %} - {{ article.subtitle|striptags|e }} {% endif %} @
+    {{ super() }}
 {% endblock title %}
 
 {% block content %}
@@ -9,18 +10,24 @@
             <h1>{{ article.title }}</h1>
         </div>
         <div class="article-metadata">
-          {% include 'includes/article-metadata.html' %}
+            {% include 'includes/article-metadata.html' %}
         </div>
         <div class="article-content beapow-book-digests">{{ article.content }}</div>
     </div>
+    <script>
+        $(".page").each(function (index) {
+                const p = $(this).html();
+                $(this).attr("id", "page-" + p);
+            }
+        )
+    </script>
 {% endblock %}
 
 {% block sidebar %}
-<div class="sidebar">
-{% if article.toc %}
-    <h2>目录</h2>
-    {{article.toc}}
-{% endif %}
-</div>
-
+    <div class="sidebar">
+        {% if article.toc %}
+            <h2>目录</h2>
+            {{ article.toc }}
+        {% endif %}
+    </div>
 {% endblock %}
