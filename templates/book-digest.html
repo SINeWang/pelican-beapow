@@ -17,7 +17,16 @@
     <script>
         $(".page").each(function (index) {
                 const p = $(this).html();
-                $(this).attr("id", "page-" + p);
+                if (p != '.') {
+                    $(this).attr("id", "page-" + p);
+                }
+            }
+        )
+        $(".pre-page").each(function (index) {
+                const p = $(this).html();
+                if (p != '.') {
+                    $(this).attr("id", "pre-page-" + p);
+                }
             }
         )
     </script>

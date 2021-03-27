@@ -26,6 +26,16 @@ span.page::before {
     content: "~";
 }
 
+span.pre-page {
+    color: #464a4a;
+    font-style: italic;
+    position: absolute;
+    left: 0;
+}
+span.pre-page::before {
+    content: "-";
+}
+
 h1 {
     font-size: 2.0em;
 }
