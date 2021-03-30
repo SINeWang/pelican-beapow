@@ -33,7 +33,7 @@ span.pre-page {
     left: 0;
 }
 span.pre-page::before {
-    content: "-";
+    content: "^";
 }
 
 h1 {
