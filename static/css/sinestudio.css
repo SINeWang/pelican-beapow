@@ -15,6 +15,12 @@ span.hlr {
     color: #943126;
 }
 
+span.center-strong {
+    text-align: center;
+    font-weight: 900;
+    display: block;
+}
+
 span.page {
     color: #464a4a;
     font-style: italic;
