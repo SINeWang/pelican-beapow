@@ -238,10 +238,13 @@ ul, ol {
     font-size: 1em;
     margin-left: 50px;
     background: rgba(255, 255, 255, 0.2);
+    font-family: adobe-garamond-pro, serif;
 }
 
 .beapow-book-digests blockquote p {
     padding-left: 0;
+    font-size: 1em;
+    font-family: adobe-garamond-pro, serif;
 }
 
 .beapow-book-digests ul,
