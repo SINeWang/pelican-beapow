@@ -6,6 +6,9 @@ table {
     margin-left: auto;
     margin-right: auto;
 }
+th{
+    text-align: center;
+}
 
 .navbar-brand {
     font-size: 1.2em;
