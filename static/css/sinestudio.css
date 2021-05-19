@@ -295,6 +295,11 @@ ul, ol {
     text-align: justify;
 }
 
+.docutils.align-center td {
+    text-align: center;
+    vertical-align: middle;
+}
+
 .footer {
     position: relative;;
     right: 0;

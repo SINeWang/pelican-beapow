@@ -1,0 +1,21 @@
+{% extends "includes/base-full.html" %}
+
+{% block title %}
+{{ page.title|striptags|e }} {%if page.subtitle %} - {{ page.subtitle|striptags|e }} {% endif %} @ {{ super() }}
+{% endblock title %}
+
+{% block content %}
+<div class='article'>
+    <div class="article-title">
+        <h1>{{ page.title }}</h1>
+    </div>
+
+    <div class="article-metadata">
+      {% if page.summary %}
+        <div class="article-summary">{{ page.summary }}</div>
+      {% endif %}
+    </div>
+
+    <div class="article-content beapow-page">{{ page.content }}</div>
+</div>
+{% endblock %}
