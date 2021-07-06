@@ -132,11 +132,6 @@
                   {% endfor %}
               </div>
               <div class="panel-body"  onclick="location.href='/{{article.url}}'" style="cursor:pointer;">
-                  {% if article.category|string() == "photos" %}
-                    <p>
-                      <img class="img-responsive img-rounded" src="/images/{{article.date.strftime("%Y/%m-%d")}}/{{article.slug}}.png" />
-                    </p>
-                  {% endif %}
                   <p>
                   {{ article.summary }}
                   </p>
