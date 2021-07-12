@@ -44,6 +44,7 @@ span.pre-page {
     font-style: italic;
     position: absolute;
     left: 0;
+    font-size: small;
 }
 span.pre-page::before {
     content: "^";
