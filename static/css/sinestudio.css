@@ -264,6 +264,10 @@ ul, ol {
 .beapow-book-digests ol {
     margin-left: 50px;
 }
+.beapow-book-digests blockquote > ul,
+.beapow-book-digests blockquote > ol{
+    margin-left: 0;
+}
 
 .beapow-book-digests p {
     color: #1f2732;
