@@ -306,6 +306,10 @@ ul, ol {
     vertical-align: middle;
 }
 
+table.docutils.footnote  {
+    margin-left: 45px;
+}
+
 .footer {
     position: relative;;
     right: 0;
