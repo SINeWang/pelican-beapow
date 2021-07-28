@@ -70,6 +70,11 @@ div.article-title {
     text-align: center;
     text-decoration: none;
 }
+div.article-last-update {
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 0 0 0;
+}
 
 div.container{
     margin-left: auto;

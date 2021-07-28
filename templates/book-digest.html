@@ -13,6 +13,9 @@
             {% include 'includes/article-metadata.html' %}
         </div>
         <div class="article-content beapow-book-digests">{{ article.content }}</div>
+        <div class="article-last-update">
+        (最后更新于 {{ article.modified.strftime("%Y-%m-%d" ) }})
+        </div>
     </div>
     <script>
         $(".page").each(function (index) {
