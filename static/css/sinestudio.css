@@ -2,6 +2,13 @@ body {
     background-color: #ddd;
     line-height: 1.8;
 }
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+th{
+    text-align: center;
+}
 
 .navbar-brand {
     font-size: 1.2em;
@@ -37,6 +44,7 @@ span.pre-page {
     font-style: italic;
     position: absolute;
     left: 0;
+    font-size: small;
 }
 span.pre-page::before {
     content: "^";
@@ -47,22 +55,33 @@ h1 {
 }
 
 h2 {
-    font-size: 1.8em;
-}
-
-h3 {
     font-size: 1.5em;
 }
 
-h4 {
+h3 {
     font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
 }
 
 div.article-title {
     text-align: center;
     text-decoration: none;
 }
+div.article-last-update {
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 0 0 0;
+}
 
+div.container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
 
 .article-title > h1 {
     padding: 0 0 20px 0;
@@ -159,7 +178,6 @@ div.toc > {
 a.toc-backref {
     text-decoration: none;
     color: #3e4245;
-    background: #ffffff3d;
 }
 
 .sidebar {
@@ -238,15 +256,22 @@ ul, ol {
     font-size: 1em;
     margin-left: 50px;
     background: rgba(255, 255, 255, 0.2);
+    font-family: adobe-garamond-pro, serif;
 }
 
 .beapow-book-digests blockquote p {
     padding-left: 0;
+    font-size: 1em;
+    font-family: adobe-garamond-pro, serif;
 }
 
 .beapow-book-digests ul,
 .beapow-book-digests ol {
     margin-left: 50px;
+}
+.beapow-book-digests blockquote > ul,
+.beapow-book-digests blockquote > ol{
+    margin-left: 0;
 }
 
 .beapow-book-digests p {
@@ -285,13 +310,22 @@ ul, ol {
     text-align: justify;
 }
 
+.docutils.align-center td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+table.docutils.footnote  {
+    margin-left: 45px;
+}
+
 .footer {
     position: relative;;
     right: 0;
     bottom: 0;
     left: 0;
     padding: 1rem;
-    background-color: #efefef;
+    /*background-color: #efefef;*/
     text-align: center;
 }
 

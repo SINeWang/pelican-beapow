@@ -1,6 +1,6 @@
 <div class="text-center">
   <p>
-    <span class="glyphicon">{{ article.date.strftime("%Y-%m-%d") }}</span>
+    <span class="glyphicon">{{article.date.strftime("%Y-%m-%d") }}</span>
 
     {% if article.category|trim|count > 0 %}
       {% for name, slug in MENUITEMS %}

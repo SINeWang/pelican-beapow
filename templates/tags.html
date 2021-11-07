@@ -5,7 +5,7 @@
 <h2 class="content-title nocount">标签</h2>
 <ul>
 {% for tag, articles in tags %}
-    <li>{{ tag }} ( {{ articles | length }} )</a></li>
+    <li>{{ tag }} ( {{ articles | length }} )</li>
     <ul>
 			{% for article in articles %}
 			<li><span class="small">{{ article.date.strftime("%Y-%m-%d") }}</span>	<a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>

@@ -2,33 +2,63 @@
 
 
 {% block title %}
-  {% for name, slug in CATEGORY_ITEMS %}
-    {% if category | string() == slug | string() %}
-        {{name}} @ {{ super() }}
-    {% endif %}
-  {% endfor %}
+    {% for name, slug in CATEGORY_ITEMS %}
+        {% if category | string() == slug | string() %}
+            {{ name }} @ {{ super() }}
+        {% endif %}
+    {% endfor %}
 {% endblock title %}
 
 {% block content %}
-  {% for name, slug in CATEGORY_ITEMS %}
-    {% if category | string() == slug | string() %}
-<h1 style="text-align:center;">{{name}}</h1>
+    {% for name, slug in CATEGORY_ITEMS %}
+        {% if category | string() == slug | string() %}
+            <h1 style="text-align:center;">{{ name }} <sup>{{ articles|length }}</sup></h1>
+        {% endif %}
+    {% endfor %}
+
+    <hr>
+    {% if articles %}
+        {#<ul class="timeline">#}
+        {#    {% for article in articles %}#}
+        {#      <li class="{{ loop.cycle('timeline', 'timeline-inverted') }}">#}
+        {#        {% include 'includes/article-timeline.html' %}#}
+        {#      </li>#}
+        {#    {% endfor %} {# For article #}
+        {#    <li class="clearfix no-float"></li>#}
+        {#</ul>#}
+
+        <div class="container">
+            <div class="moments">
+                <div class="line text-muted"></div>
+                {% for article in articles %}
+                    <article class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="panel-title"><a href="/{{ article.url }}">{{ article.title }}</a></span>
+                            <time>{{ article.date.strftime("%Y-%m-%d") }}</time>
+                        </div>
+                        <div class="panel-body" onclick="location.href='/{{ article.url }}'"
+                             style="cursor:pointer;">
+                            <p>
+                                {{ article.summary }}
+                            </p>
+                        </div>
+                        {% if article.tags %}
+                            <div class="panel-footer">
+                                <ul class="list-of-tags tags-in-article">
+                                    {% for tag in article.tags|sort %}
+                                        <li><a href="{{ SITEURL }}/tags/{{ tag.slug }}">{{ tag }}
+                                            {% for aTag, tagged_articles in tags if aTag == tag %}
+                                                <sup>{{ tagged_articles|count }}</sup></a>
+                                            {% endfor %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
     {% endif %}
-  {% endfor %}
-
-
-
-
-<hr>
-{% if articles %}
-<ul class="timeline">
-    {% for article in articles %}
-      <li class="{{ loop.cycle('timeline', 'timeline-inverted') }}">
-        {% include 'includes/article-timeline.html' %}
-      </li>
-    {% endfor %} {# For article #}
-    <li class="clearfix no-float"></li>
-</ul>
-{% endif %}
 
 {% endblock %}
