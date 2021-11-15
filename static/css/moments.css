@@ -1,7 +1,7 @@
 .moments {
     position: relative;
     padding: 21px 0px 10px;
-    margin-top: 4px;
+    margin-top: 20px;
     margin-bottom: 30px;
 }
 
@@ -38,29 +38,29 @@
     background: currentColor;
 }
 
-.moments .panel {
+.moments .card {
     position: relative;
     margin: 10px 0px 21px 70px;
     clear: both;
 }
 
-.moments .panel::before {
-    position: absolute;
-    display: block;
-    top: 8px;
-    left: -24px;
-    content: '';
-    width: 0px;
-    height: 0px;
-    border: inherit;
-    border-width: 12px;
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-}
+/*.moments .card::before {*/
+/*    position: absolute;*/
+/*    display: block;*/
+/*    top: 8px;*/
+/*    left: -24px;*/
+/*    content: '';*/
+/*    width: 0px;*/
+/*    height: 0px;*/
+/*    border: inherit;*/
+/*    border-width: 12px;*/
+/*    border-top-color: transparent;*/
+/*    border-bottom-color: transparent;*/
+/*    border-left-color: transparent;*/
+/*}*/
 
-.moments .panel .panel-heading.icon * { font-size: 1.5em; text-align: center; vertical-align: middle; line-height: 40px; }
-.moments .panel .panel-heading.icon {
+.moments .card .card-header.icon * { font-size: 1.5em; text-align: center; vertical-align: middle; line-height: 40px; }
+.moments .card .card-header.icon {
     position: absolute;
     left: -59px;
     display: block;
@@ -72,17 +72,17 @@
     float: left;
 }
 
-.moments .panel-outline {
+.moments .card-outline {
     border-color: transparent;
     background: transparent;
     box-shadow: none;
 }
 
-.moments .panel-outline .panel-body {
+.moments .card-outline .card-body {
     padding: 10px 0px;
 }
 
-.moments .panel-outline .panel-heading:not(.icon),
-.moments .panel-outline .panel-footer {
+.moments .card-outline .card-header:not(.icon),
+.moments .card-outline .card-footer {
     display: none;
 }
