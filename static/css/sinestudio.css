@@ -260,13 +260,14 @@ ul, ol {
 
 .beapow-book-digests blockquote {
     font-size: 1em;
+    line-height: 15px;
     margin-left: 50px;
     background: rgba(255, 255, 255, 0.2);
     font-family: adobe-garamond-pro, serif;
 }
 
 .beapow-book-digests blockquote p {
-    padding-left: 0;
+    padding: 5px;
     font-size: 1em;
     font-family: adobe-garamond-pro, serif;
 }
@@ -301,7 +302,7 @@ ul, ol {
 }
 
 .beapow-page blockquote p {
-    padding-left: 0;
+    padding: 5px 10px 5px 10px;
 }
 
 .beapow-page ul,
