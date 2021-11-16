@@ -1,0 +1,25 @@
+<div class="footer">
+  <p><a rel="license" href="//creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="/theme/images/icons/cc-by-nc-nd-40-80x15.png" /></a>
+    <a href="/{{ FEED_ALL_ATOM }}"><img src="/theme/images/icons/rss.png"/></a>
+  </p>
+  <p>&copy; 2011-2021 <a href="//yanjiong.wang">王延炯博士</a>
+    {% for social, link in SOCIAL %}
+      <a href="{{link}}"><img src="/theme/images/icons/{{social|lower()}}.png"/></a>
+    {% endfor %}
+    {% for site, link in LINKS %}
+       · <a href="{{link}}">{{site}}</a>
+    {% endfor %}
+  </p>
+  <p>
+    {% if DISPLAY_PAGES_ON_MENU %}
+      {% for page in PAGES %}
+          {% if loop.first %}
+          <a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
+          {% else %}
+          | <a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
+          {% endif %}
+      {% endfor %}
+    {% endif %}
+  </p>
+  <p class="powered-by">POWERED BY <a href="//getpelican.com">Pelican</a> & <a href="//github.com/sinewang/pelican-beapow">beapow</a></p>
+</div>

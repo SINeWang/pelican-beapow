@@ -29,21 +29,20 @@
 
         <div class="container">
             <div class="moments">
-                <div class="line text-muted"></div>
                 {% for article in articles %}
-                    <article class="panel panel-default">
-                        <div class="panel-heading">
-                            <span class="panel-title"><a href="/{{ article.url }}">{{ article.title }}</a></span>
+                    <div class="moments card">
+                        <div class="card-header">
+                            <span class="card-title"><a href="/{{ article.url }}">{{ article.title }}</a></span>
                             <time>{{ article.date.strftime("%Y-%m-%d") }}</time>
                         </div>
-                        <div class="panel-body" onclick="location.href='/{{ article.url }}'"
+                        <div class="card-body" onclick="location.href='/{{ article.url }}'"
                              style="cursor:pointer;">
                             <p>
                                 {{ article.summary }}
                             </p>
                         </div>
                         {% if article.tags %}
-                            <div class="panel-footer">
+                            <div class="card-footer text-muted">
                                 <ul class="list-of-tags tags-in-article">
                                     {% for tag in article.tags|sort %}
                                         <li><a href="{{ SITEURL }}/tags/{{ tag.slug }}">{{ tag }}
@@ -55,7 +54,8 @@
                                 </ul>
                             </div>
                         {% endif %}
-                    </article>
+                    </div>
+                    <br>
                 {% endfor %}
             </div>
         </div>
