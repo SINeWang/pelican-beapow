@@ -272,6 +272,7 @@ ul, ol {
     padding: 5px;
     font-size: 1em;
     font-family: adobe-garamond-pro, serif;
+    line-height: 1.5;
 }
 
 .beapow-book-digests ul,
