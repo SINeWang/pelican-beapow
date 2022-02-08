@@ -270,8 +270,8 @@ ul, ol {
 
 .beapow-book-digests blockquote {
     font-size: 1em;
-    line-height: 15px;
     margin-left: 50px;
+    padding: 10px;
     background: rgba(255, 255, 255, 0.2);
     font-family: adobe-garamond-pro, serif;
 }
